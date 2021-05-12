@@ -1,9 +1,7 @@
 package com.bridgelab;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import junit.framework.Assert;
 
 class InvoiceTesting {
@@ -13,14 +11,12 @@ class InvoiceTesting {
 	double []distanceArray = {15,20,10};
 	int[] timeArray = {10,5,15};
 	
-    
-	//UC-1
+        //UC-1
 	@Test
 	public void givenDistanceAndTimeShouldReturnFare() {
 		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 		double fare =invoiceGenerator.calculateFareRegular(DISTANCE, TIME);
 		Assert.assertEquals(170, fare, 0.00);
-		
 	}
 	
 	//UC2
@@ -30,7 +26,6 @@ class InvoiceTesting {
 		 double avgfare = invoiceGenerator.calculateFareRegular(distanceArray, timeArray);
 		 Assert.assertEquals(160, avgfare,0.0);
 	 }
-	
 	
 	//UC3
 	@Test
@@ -44,29 +39,27 @@ class InvoiceTesting {
 		}
 		
 	}   
-	    //UC4
-		@Test
-		public void givenUserIDAndListOfRidesShouldReturnInvoiceRepositories() {
-			double[] distanceArray1 = {15,20,10};
-			int[]  timeArray1 = {10,5,15};
-			double[] distanceArray2 = {10,15,20};
-			int[]  timeArray2 = {10,5,15};
-			double[] distanceArray3 = {10,20,15};
-			int timeArray3[] = {10,5,15};
+        //UC4
+	@Test
+	public void givenUserIDAndListOfRidesShouldReturnInvoiceRepositories() {
+		double[] distanceArray1 = {15,20,10};
+		int[]  timeArray1 = {10,5,15};
+		double[] distanceArray2 = {10,15,20};
+		int[]  timeArray2 = {10,5,15};
+		double[] distanceArray3 = {10,20,15};
+		int timeArray3[] = {10,5,15};
 			
-			InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-			invoiceGenerator.calculateFareReturnArray(distanceArray1, timeArray1);
-			invoiceGenerator.calculateFareReturnArray(distanceArray2, timeArray2);
-			invoiceGenerator.calculateFareReturnArray(distanceArray3, timeArray3);
-			
-			int userId = 1;
-			
-			double[] expected = invoiceGenerator.getRepository(userId);
-			double[] expectedElements = {3,480,160};
-			
-			for(int i = 0; i < distanceArray.length; i++) {
-				Assert.assertEquals(expectedElements[i], expected[i]);
-			}
+		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+		invoiceGenerator.calculateFareReturnArray(distanceArray1, timeArray1);
+		invoiceGenerator.calculateFareReturnArray(distanceArray2, timeArray2);
+		invoiceGenerator.calculateFareReturnArray(distanceArray3, timeArray3);
+		int userId = 1;
+		double[] expected = invoiceGenerator.getRepository(userId);
+		double[] expectedElements = {3,480,160};
+		
+		for(int i = 0; i < distanceArray.length; i++) {
+		     Assert.assertEquals(expectedElements[i], expected[i]);
+		    }
 		}
 		
 		//UC5
@@ -80,7 +73,6 @@ class InvoiceTesting {
 		
 		@Test
 		public void givenCustomerTypePremium_ShouldCalculateForPremium() {
-			
 			InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 			String customerType = "Premium";
 			double fare = invoiceGenerator.calculateFareForCustomer(customerType, DISTANCE, TIME);
