@@ -54,7 +54,7 @@ public class InvoiceGenerator {
             avg += calculateFareRegular(distanceArray[i], timeArray[i]);
             numberOfRides++;
             
-        }
+         }
          //System.out.println("Total number of Rides:"+numberOfRides);
          //System.out.println("Total fare of rides:"+avg);
          double avg1 = avg / distanceArray.length;
