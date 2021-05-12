@@ -1,9 +1,7 @@
 package com.bridgelab;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import junit.framework.Assert;
 
 class InvoiceTesting {
@@ -13,19 +11,17 @@ class InvoiceTesting {
 	double []distanceArray = {15,20,10};
 	int[] timeArray = {10,5,15};
 	
-    
-	//UC-1
+        //UC-1
 	@Test
 	public void givenDistanceAndTimeShouldReturnFare() {
 		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 		double fare =invoiceGenerator.calculateFareRegular(DISTANCE, TIME);
 		Assert.assertEquals(170, fare, 0.00);
-		
 	}
 	
 	//UC2
 	@Test
-    public void givenMultipleRidesShouldReturnAggregateFare() {
+       public void givenMultipleRidesShouldReturnAggregateFare() {
 		 InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 		 double avgfare = invoiceGenerator.calculateFareRegular(distanceArray, timeArray);
 		 Assert.assertEquals(160, avgfare,0.0);
@@ -44,15 +40,15 @@ class InvoiceTesting {
 		}
 		
 	}   
-	    //UC4
-		@Test
-		public void givenUserIDAndListOfRidesShouldReturnInvoiceRepositories() {
-			double[] distanceArray1 = {15,20,10};
-			int[]  timeArray1 = {10,5,15};
-			double[] distanceArray2 = {10,15,20};
-			int[]  timeArray2 = {10,5,15};
-			double[] distanceArray3 = {10,20,15};
-			int timeArray3[] = {10,5,15};
+         //UC4
+	  @Test
+	 public void givenUserIDAndListOfRidesShouldReturnInvoiceRepositories() {
+		double[] distanceArray1 = {15,20,10};
+		int[]  timeArray1 = {10,5,15};
+		double[] distanceArray2 = {10,15,20};
+		int[]  timeArray2 = {10,5,15};
+		double[] distanceArray3 = {10,20,15};
+		int timeArray3[] = {10,5,15};
 			
 			InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 			invoiceGenerator.calculateFareReturnArray(distanceArray1, timeArray1);
