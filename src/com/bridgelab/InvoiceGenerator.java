@@ -18,24 +18,21 @@ public class InvoiceGenerator {
 			return calculateFarePremium(distance,time);
 		}
 		return -1;
-	}
+	 }
 	
 	public double calculateFareRegular(double distance, int time ) {
 		 final double COST_PER_KM = 10;
 		 final int COST_PER_MIN = 1;
 		 final double MIN_RIDE_COST = 5;
-		 
 		 return calculateFare(COST_PER_KM ,COST_PER_MIN,COST_PER_MIN, distance,time);
 		
 	}
 	
 	public double calculateFarePremium(double distance,int time) {
-		
 		final double COST_PER_KM = 15;
 		final int COST_PER_MIN = 2;
 		final double MIN_RIDE_COST = 20;
 		return calculateFare(COST_PER_KM, COST_PER_MIN, MIN_RIDE_COST, distance, time);
-		
 	}
 	
 	public double calculateFare(double COST_PER_KM, Integer COST_PER_MIN, double MIN_RIDE_COST, double distance, int time) {
@@ -61,8 +58,7 @@ public class InvoiceGenerator {
          //System.out.println("Average fare for rides:" +avg1);
          return avg1;
     }
-
-	
+       
 	public double[] calculateFareReturnArray(double[] distanceArray, int[] timeArray) {
 		id++;
 		double totalFare = 0;
